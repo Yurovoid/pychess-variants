@@ -191,6 +191,8 @@ function variant(config: VariantConfig): Variant {
             pass: !!config.rules?.pass,
             setup: !!config.rules?.setup,
             noDrawOffer: !!config.rules?.noDrawOffer,
+unlimited: config.rules?.unlimited ?? false, // Add this line
+            noDrawOffer: !!config.rules?.noDrawOffer,
         },
         material: {
             showDiff: !config.pocket?.captureToHand && !['ataxx', 'fogofwar', 'horde'].includes(config.name) && pieceFamiliesWithMaterialDifferenceSupported.includes(config.pieceFamily),

@@ -177,6 +177,31 @@ async def create_seek(db, invites, seeks, user, data, empty=False):
         inc=data["increment"],
         byoyomi_period=data["byoyomiPeriod"],
         day=day,
+        day = data.get("day", 0)
+if day == -1:
+    time_control = "unlimited"
+else:
+    time_control = time_control_str(self.base, self.inc, self.byoyomi_period, self.day)
+
+seek = Seek(
+    seek_id,
+    user,
+    data["variant"],
+    fen=data["fen"],
+    color=data["color"],
+    base=data["minutes"],
+    inc=data["increment"],
+    byoyomi_period=data["byoyomiPeriod"],
+    day=day,
+    rated=data.get("rated"),
+    rrmin=data.get("rrmin"),
+    rrmax=data.get("rrmax"),
+    chess960=data.get("chess960"),
+    target=target,
+    player1=None if empty else user,
+    player2=None,
+    game_id=game_id,
+)
         rated=data.get("rated"),
         rrmin=data.get("rrmin"),
         rrmax=data.get("rrmax"),

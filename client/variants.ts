@@ -4,6 +4,7 @@ import * as cg from 'chessgroundx/types';
 import * as util from 'chessgroundx/util';
 
 import { BoardMarkType, ColorName, CountingType, MaterialPointType, PieceSoundType, PromotionSuffix, PromotionType, TimeControlType, uci2LastMove } from './chess';
+import { TimeControlType } from './chess'; // Add this line if not already present
 import { _ } from './i18n';
 import { calculateDiff, Equivalence, MaterialDiff } from './material';
 
